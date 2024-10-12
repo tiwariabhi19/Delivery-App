@@ -83,10 +83,17 @@ git clone https://github.com/yourusername/delivery-management-system-api.git
 cd delivery-management-system-api
 Install dependencies:
 
+
+
+
 bash
 Copy code
 npm install
 Create a .env file in the root directory and add your environment variables:
+
+
+
+
 
 makefile
 Copy code
@@ -94,6 +101,11 @@ MONGO_URL=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 PORT=4000
 Start the server:
+
+
+
+
+
 
 bash
 Copy code
@@ -105,37 +117,90 @@ The server will be running at http://localhost:4000.
 
 
 API Endpoints
+
+
+
+
 User Endpoints
+
 Register User: POST /api/v1/auth/register
+
 Login User: POST /api/v1/auth/login
+
 Get User Info: GET /api/v1/user
+
 Update User: PUT /api/v1/user
+
 Delete User: DELETE /api/v1/user/:id
+
+
+
+
 Restaurant Endpoints
+
+
+
+
 Get All Restaurants: GET /api/v1/restaurant
+
+
 Get Restaurant by ID: GET /api/v1/restaurant/:id
+
 Create Restaurant: POST /api/v1/restaurant
+
 Update Restaurant: PUT /api/v1/restaurant/:id
+
 Delete Restaurant: DELETE /api/v1/restaurant/:id
+
 Food Endpoints
+
+
+
+
 Get All Foods: GET /api/v1/food
+
 Get Food by ID: GET /api/v1/food/:id
+
 Create Food: POST /api/v1/food
+
 Update Food: PUT /api/v1/food/:id
+
 Delete Food: DELETE /api/v1/food/:id
+
 Order Endpoints
+
+
+
+
 Place Order: POST /api/v1/order
+
 Update Order Status: PUT /api/v1/order/:id
+
 Authentication
+
+
+
 This API uses JSON Web Tokens (JWT) for authentication. After a successful login, a token will be provided. Include this token in the Authorization header for any protected routes:
 
+
+
+
 makefile
+
+
+
 Copy code
 Authorization: Bearer <token>
 Error Handling
+
+
+
 The API uses standard HTTP status codes for error handling. In the event of an error, the response will include a success flag set to false and a message describing the error.
 
 Contributing
+
+
+
 Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
 License
