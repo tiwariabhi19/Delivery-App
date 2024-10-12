@@ -1,5 +1,16 @@
 **Delivery Management System API**
-Welcome to the Delivery Management System API! This RESTful API facilitates the management of food delivery services, allowing users to register, authenticate, and interact with various resources including users, restaurants, food items, and orders.
+
+
+Welcome to the Delivery Management System API! This RESTful API facilitates the management of food delivery services, allowing users to register, authenticate, and interact with various resources including users, restaurants, food items, and orders.A comprehensive Node.js, Express, MongoDB, and JWT project showcasing practical implementation of various concepts.
+
+
+- Node.js and Express fundamentals
+- MongoDB connection and schema design
+- JWT authentication and authorization
+- RESTful API development (CRUD operations)
+- MVC pattern implementation
+- Password hashing and token generation
+- User and restaurant management
 
 Table of Contents
 Features
@@ -10,12 +21,34 @@ Authentication
 Error Handling
 Contributing
 License
+
+
+
 Features
+
+Features
+
+- User registration and login
+- Password reset and update
+- Restaurant creation and management
+- Food category and item management
+- Order management
+- Admin APIs
+
+
 User registration and authentication
 Admin role management
 CRUD operations for restaurants and food items
 Order placement and management
 Secure password storage and token-based authentication
+
+
+
+
+
+
+
+
 Technologies
 Node.js - JavaScript runtime for building server-side applications
 Express - Web framework for Node.js to simplify API development
@@ -26,7 +59,13 @@ Bcrypt - For hashing passwords
 CORS - Middleware to enable Cross-Origin Resource Sharing
 Dotenv - For managing environment variables
 Morgan - HTTP request logger middleware for Node.js
+
+
+
 Getting Started
+
+
+
 Prerequisites
 Node.js (version 14 or higher)
 MongoDB (local installation or a cloud instance)
