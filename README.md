@@ -114,6 +114,17 @@ Contributions are welcome! Please fork the repository and create a pull request.
 
 This project is licensed under the MIT License.
 
+### Postman Collection
+To test the API, you can use the Postman collection included in this submission. Follow these steps to import it:
+
+1. Open Postman.
+2. Click on the **Import** button.
+3. Select the exported collection file (e.g., `DeliveryManagementSystem.postman_collection.json`).
+4. Click **Import**.
+
+This collection contains all the necessary requests for CRUD operations on drivers, routes, and payments.
+
+
 ### How to Use the README
 
 1. Replace placeholders like `yourusername` and `your_mongodb_connection_string` with your actual details.
