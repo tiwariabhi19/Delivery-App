@@ -52,8 +52,8 @@ The Delivery Management System is a RESTful API designed to facilitate the manag
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/delivery-management-system.git
-   cd delivery-management-system
+   git clone https://github.com/tiwariabhi19/Delivery-App/blob/main/README.md.git
+   cd Delivery-App
 
    ```
 
