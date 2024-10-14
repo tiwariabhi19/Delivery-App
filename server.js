@@ -1,43 +1,33 @@
 const express = require("express");
-const colors = require("colors");
+const connectDB = require("./config/db");
 const cors = require("cors");
 const morgan = require("morgan");
-const dotenv = require("dotenv");
-const connectDb = require("./config/db");
+const authRoutes = require("./routes/authRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+const driverRoutes = require("./routes/driverRoutes");
+const routeRoutes = require("./routes/routeRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
+require("dotenv").config();
 
-//dot en configuration
-dotenv.config();
-
-//DB connection
-connectDb();
-
-//rest object
 const app = express();
 
-//middlewares
+// Connect to the database
+connectDB();
+
+// Middleware
 app.use(cors());
-app.use(express.json());
 app.use(morgan("dev"));
+app.use(express.json());
 
-//route
-// URL => http://localhost:8080
-app.use("/api/v1/test", require("./routes/testRoutes"));
-app.use("/api/v1/auth", require("./routes/authRoutes"));
-app.use("/api/v1/user", require("./routes/userRoutes"));
-app.use("/api/v1/resturant", require("./routes/resturantRoutes"));
-app.use("/api/v1/category", require("./routes/categoryRoutes"));
-app.use("/api/v1/food", require("./routes/foodRoutes"));
+// Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/drivers", driverRoutes);
+app.use("/api/routes", routeRoutes);
+app.use("/api/payments", paymentRoutes);
 
-app.get("/", (req, res) => {
-  return res
-    .status(200)
-    .send("<h1>Welcome to Food Server APP API BASE PROJECT </h1>");
-});
-
-//PORT
+// Start the server
 const PORT = process.env.PORT || 4000;
-
-//listen
 app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`.white.bgMagenta);
+  console.log(`Server running on port ${PORT}`);
 });

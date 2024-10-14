@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
-const colors = require("colors");
-//function mmongodb dfatabase connection
-const connectDb = async () => {
+
+const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL);
-    console.log(`Connected To Database ${mongoose.connection.host} `.bgWhite);
+    // Connect to MongoDB without deprecated options
+    const conn = await mongoose.connect(process.env.MONGO_URL);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.log("DB Error", error);
+    console.error(`Error: ${error.message}`);
+    process.exit(1);
   }
 };
-module.exports = connectDb;
+
+module.exports = connectDB;
