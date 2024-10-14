@@ -30,17 +30,19 @@ MongoDB
 "scripts": {
    "server": "nodemon server.js"
 }
+
 **Step 3: Setup Middleware**
 
 1. Import CORS middleware for handling cross-origin requests:
    app.use(cors());
-2. Use Express to handle JSON data from client-side:
+3. Use Express to handle JSON data from client-side:
    app.use(express.json());
-3. Set up Morgan for logging HTTP requests:
+4. Set up Morgan for logging HTTP requests:
    app.use(morgan('dev'));
 
 
 **Step 4: Configure Environment Variables**
+
 1. Create a .env file in the root of your project. Use dotenv to load environment variables:
     require('dotenv').config();
 2. Set the server's port dynamically from the environment variables:
@@ -57,11 +59,17 @@ View: Not applicable here, as this project is purely backend.
 
 
 ├── routes/         # API routes
+
 ├── models/         # Database schema
+
 ├── controllers/    # Business logic (callback functions)
+
 ├── config/         # Database connection
+
 ├── data/           # Predefined data (if any)
+
 ├── middleware/     # Custom middleware
+
 ├── utils/          # Utility files (helper functions)
 
 
