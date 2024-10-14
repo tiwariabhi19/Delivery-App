@@ -120,6 +120,7 @@ const connectDB = async () => {
 };
 module.exports = connectDB;
 
+
 **User Model**
 
 In the models/ folder, create a User model schema:
@@ -151,6 +152,7 @@ const userSchema = new mongoose.Schema({
    profile: String,
 }, { timestamps: true });
 
+
 module.exports = mongoose.model('User', userSchema);
 
 
@@ -172,17 +174,22 @@ const registerUser = async (req, res) => {
     const { username, email, password } = req.body;
     
     // Validate user input
+    
     if (!username || !email || !password) {
         return res.status(400).json({ message: 'Please provide all required fields' });
     }
+    
 
     // Check if the user already exists
+    
     const userExists = await User.findOne({ email });
     if (userExists) {
         return res.status(400).json({ message: 'User already exists' });
     }
+    
 
     // Create new user
+    
     const user = await User.create({
         username,
         email,
@@ -197,6 +204,8 @@ const registerUser = async (req, res) => {
 
 
 **Step 3: Connect Authentication Routes**
+
+
 1. In server.js, connect the authentication routes:
 
 app.use('/api/v1/auth', require('./routes/authRoutes'));
@@ -225,7 +234,6 @@ Delete User: DELETE /api/v1/user/:id
 
 
 Get All Restaurants: GET /api/v1/restaurant
-
 
 Get Restaurant by ID: GET /api/v1/restaurant/:id
 
